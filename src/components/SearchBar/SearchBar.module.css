@@ -1,0 +1,19 @@
+.SearchBar {
+  background: #eee;
+  border: 2px solid #bbb;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 2.5rem 25%;
+}
+
+.SearchInput {
+  background: #eee;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  flex-grow: 1;
+  font-size: 18px;
+  padding: 5px;
+}
