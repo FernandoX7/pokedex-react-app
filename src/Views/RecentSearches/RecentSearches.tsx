@@ -5,7 +5,7 @@ import { Pokemon } from "../../types/Pokemon";
 
 const RecentSearches = () => {
   const recentPokemonSearches: Pokemon[] = useSelector((state: any) => state.recentSearches.pokemon);
-  const recentSearchesLimit = 5;
+  const recentSearchesLimit = 10;
 
   return (
     <div className={classes.RecentSearches}>
