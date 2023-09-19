@@ -2,7 +2,7 @@ import Card from "../Card/Card";
 import classes from './PokemonDetails.module.css';
 import React from "react";
 import { PokemonTypeColor } from "../../utils/PokemonTypeColor";
-import { PokemonTypes } from "../../types/PokemonTypes";
+import { AllPokemonTypes } from "../../types/AllPokemonTypes";
 
 interface PokemonDetailsProps {
   description: string,
@@ -10,7 +10,7 @@ interface PokemonDetailsProps {
   imageUrl: string,
   name: string,
   sprites: string[],
-  type: keyof PokemonTypes,
+  type: keyof AllPokemonTypes,
 }
 
 const PokemonDetails: React.FC<PokemonDetailsProps> = (props) => {

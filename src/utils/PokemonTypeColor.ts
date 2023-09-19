@@ -1,6 +1,6 @@
-import { PokemonTypes } from "../types/PokemonTypes";
+import { AllPokemonTypes } from "../types/AllPokemonTypes";
 
-export const PokemonTypeColor = (type: keyof PokemonTypes): string => {
+export const PokemonTypeColor = (type: keyof AllPokemonTypes): string => {
   switch (type) {
     case 'normal':
       return '#A8A878';
