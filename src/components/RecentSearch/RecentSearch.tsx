@@ -4,7 +4,7 @@ import React from "react";
 
 interface RecentSearchProps {
   id: string,
-  imageUrl: string,
+  imageUrl: string | null,
   name: string,
 }
 
@@ -16,7 +16,7 @@ const RecentSearch: React.FC<RecentSearchProps> = ({id, imageUrl, name}) => {
 
       <img
         className={classes.PokemonImage}
-        src={imageUrl}
+        src={imageUrl || ""}
         alt={name} />
     </Card>
   );
