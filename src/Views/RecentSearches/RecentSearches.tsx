@@ -1,14 +1,25 @@
 import classes from './RecentSearches.module.css';
 import RecentSearch from "../../components/RecentSearch/RecentSearch";
+import { useSelector } from "react-redux";
+import { Pokemon } from "../../types/Pokemon";
 
 const RecentSearches = () => {
+  const recentPokemonSearches: Pokemon[] = useSelector((state: any) => state.recentSearches.pokemon);
+  const recentSearchesLimit = 5;
+
   return (
     <div className={classes.RecentSearches}>
-      <RecentSearch />
-      <RecentSearch />
-      <RecentSearch />
-      <RecentSearch />
-      <RecentSearch />
+
+      {recentPokemonSearches.slice(0, recentSearchesLimit).map((pokemon: Pokemon) => {
+        return (
+          <RecentSearch
+            key={pokemon.id}
+            imageUrl={pokemon.sprites.front_default}
+            name={pokemon.species.name}
+            id={pokemon.id}
+          />
+        );
+      })}
     </div>
   );
 };
