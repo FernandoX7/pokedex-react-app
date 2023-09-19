@@ -2,58 +2,58 @@ import Card from "../Card/Card";
 import classes from './PokemonDetails.module.css';
 import React from "react";
 import { PokemonTypeColor } from "../../utils/PokemonTypeColor";
-import { AllPokemonTypes } from "../../types/AllPokemonTypes";
+import { useLocation } from "react-router-dom";
 
-interface PokemonDetailsProps {
-  description: string,
-  id: string,
-  imageUrl: string,
-  name: string,
-  sprites: string[],
-  type: keyof AllPokemonTypes,
-}
+const PokemonDetails = () => {
+  const linkData = useLocation();
+  const pokemon = linkData.state.pokemon;
+  // TODO: Extract duplicate sprite code into separate function
+  const sprites: any = pokemon.sprites;
+  const spriteElements = [];
 
-const PokemonDetails: React.FC<PokemonDetailsProps> = (props) => {
-  const {
-    description,
-    id,
-    imageUrl,
-    name,
-    sprites,
-    type,
-  } = props;
+  for (const key in sprites) {
+    const spriteUrl = sprites[key];
+
+    if (typeof spriteUrl === "string") {
+      spriteElements.push(
+        <img
+          key={key}
+          src={spriteUrl}
+          alt={key}
+        />
+      );
+    }
+  }
 
   return (
     <Card className={classes.MainDetails}>
       <div>
-        <h2>{name}</h2>
-        <p>{id}</p>
-        <p>{description}</p>
+        <h2>{pokemon.species.name.toUpperCase()}</h2>
+        <p>#{pokemon.id}</p>
+        {/*TODO: Get current Pokemon actual description*/}
+        <p>When it retracts its long neck into its shell, it squirts out water with vigorous force.</p>
 
-        <div className={classes.Sprites}>
-          {sprites.map(sprite => (
-            <img
-              key={Math.random()} // Simple key for a simple string array
-              className={classes.Sprite}
-              src={sprite}
-              alt={name} />
-          ))}
-        </div>
+        {spriteElements}
 
-        <div
-          className={classes.PokemonType}
-          style={{
-            backgroundColor: PokemonTypeColor(type)
-          }}>
-          {type.toUpperCase()}
-        </div>
+        {pokemon.types.map((item: any) => {
+          return (
+            <div
+              key={Math.random()}
+              className={classes.PokemonType}
+              style={{
+                backgroundColor: PokemonTypeColor(item.type.name)
+              }}>
+              {item.type.name.toUpperCase()}
+            </div>
+          );
+        })}
       </div>
 
       <div>
         <img
           className={classes.MainSprite}
-          src={imageUrl}
-          alt={name} />
+          src={pokemon.sprites.front_default || ""}
+          alt={pokemon.species.name} />
       </div>
     </Card>
   );
