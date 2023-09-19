@@ -1,46 +1,39 @@
-# Getting Started with Create React App
+# pokedex-react-web
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Setup
 
 In the project directory, you can run:
+
+### `npm install`
 
 ### `npm start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+---
 
-### `npm test`
+## Project information
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The project uses the https://pokeapi.co/docs/v2 API to allow searching of Pokémon.
 
-### `npm run build`
+You can also see the history of Pokémon you have searched. This history persists, so refreshing the browser will show the results again.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## What is _missing_
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+When clicking on a Pokémon you recently searched, the details page will load. On this page, the evolutions and the Pokémon description are hard-coded. For example, we need to hit a new endpoint to add the evolutions: https://pokeapi.co/api/v2/evolution-chain/3/. The description is available at this endpoint https://pokeapi.co/api/v2/pokemon-species/squirtle
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+We could then save this data into our redux store, presumably under a new "slice" since it doesn't relate to the `recent-serach-slice.ts`
 
-### `npm run eject`
+## Screenshots
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Home
+![Screenshot 2023-09-19 at 17 16 08](https://github.com/FernandoX7/Bluestone-for-Reddit/assets/16779411/b4525c8b-5473-44e1-860a-663e46f4ff07)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Searching for a Pokémon
+![Screenshot 2023-09-19 at 17 16 22](https://github.com/FernandoX7/Bluestone-for-Reddit/assets/16779411/2a2f964d-3346-4476-8439-93ee010be9ca)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Pokémon details page (Accessible by clicking on a recent search)
+![Screenshot 2023-09-19 at 17 16 35](https://github.com/FernandoX7/Bluestone-for-Reddit/assets/16779411/3a69bd94-eb36-4742-a91c-e9e3cf49931d)
