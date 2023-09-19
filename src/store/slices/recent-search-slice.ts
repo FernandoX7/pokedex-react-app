@@ -1,9 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { RECENT_SEARCHES_KEY } from "../../utils/local-storage";
+
+const getStoredRecentSearches = () => {
+  const storedData = localStorage.getItem(RECENT_SEARCHES_KEY);
+  return storedData ? JSON.parse(storedData) : [];
+};
 
 const recentSearchSlice = createSlice({
   name: 'recentSearchSlice',
   initialState: {
-    pokemon: [],
+    pokemon: getStoredRecentSearches(), // Initialize with data from local storage
   },
   reducers: {
     addRecentSearch(state: any, action) {
@@ -20,6 +26,8 @@ const recentSearchSlice = createSlice({
       // Add the new Pokemon to the beginning of the array
       state.pokemon.unshift(newItem);
 
+      // Update local storage with the updated state
+      localStorage.setItem(RECENT_SEARCHES_KEY, JSON.stringify(state.pokemon));
     }
   }
 });
