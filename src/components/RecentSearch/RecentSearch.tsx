@@ -48,10 +48,13 @@ const RecentSearch: React.FC<RecentSearchProps> = ({pokemon}) => {
           </h3>
 
           {pokemon.abilities.map((item: any) => {
-            return <p key={Math.random()}
-            className={classes.Ability}>
-              {item.ability.name.charAt(0).toUpperCase() + item.ability.name.slice(1)}
-            </p>;
+            return (
+              <p
+                key={Math.random()}
+                className={classes.Ability}>
+                {item.ability.name.charAt(0).toUpperCase() + item.ability.name.slice(1)}
+              </p>
+            );
           })}
 
         </div>
