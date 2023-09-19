@@ -7,6 +7,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorView from "./Views/ErrorView/ErrorView";
 import PokemonDetailsView from "./Views/PokemonDetailsView/PokemonDetailsView";
 import MainHeader from "./components/MainHeader/MainHeader";
+import { Provider } from "react-redux";
+import store from "./store";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -27,7 +29,9 @@ const router = createBrowserRouter([
 root.render(
   <React.StrictMode>
     <MainHeader />
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </React.StrictMode>
 );
 
