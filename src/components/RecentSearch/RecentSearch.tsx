@@ -51,7 +51,7 @@ const RecentSearch: React.FC<RecentSearchProps> = ({pokemon}) => {
             return (
               <p
                 key={Math.random()}
-                className={classes.Ability}>
+                className={classes.NoBottomMargin}>
                 {item.ability.name.charAt(0).toUpperCase() + item.ability.name.slice(1)}
               </p>
             );
@@ -61,10 +61,22 @@ const RecentSearch: React.FC<RecentSearchProps> = ({pokemon}) => {
 
         <div className={classes.HorizontalSection}>
           <h3 className={classes.SectionTitle}>
-            Moves
           </h3>
 
-          <p>Mega-Punch + 99 more</p>
+          <div>
+            {pokemon.moves.slice(0, 2).map((item: any) => (
+              <p
+                key={Math.random()}
+                className={classes.NoBottomMargin}>
+                {item.move.name.charAt(0).toUpperCase() + item.move.name.slice(1)}
+              </p>
+            ))}
+            {pokemon.moves.slice(2).length > 0 && (
+              <p className={classes.NoBottomMargin}>
+                <b>+ {pokemon.moves.slice(2).length} more</b>
+              </p>
+            )}
+          </div>
         </div>
 
         <div className={classes.HorizontalSection}>
