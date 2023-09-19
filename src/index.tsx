@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorView from "./Views/ErrorView/ErrorView";
 import PokemonDetailsView from "./Views/PokemonDetailsView/PokemonDetailsView";
+import MainHeader from "./components/MainHeader/MainHeader";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
 
 root.render(
   <React.StrictMode>
+    <MainHeader />
     <RouterProvider router={router} />
   </React.StrictMode>
 );
