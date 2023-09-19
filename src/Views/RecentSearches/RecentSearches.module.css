@@ -3,6 +3,11 @@
   flex-direction: column;
 }
 
+.RecentSearches a {
+  color: inherit;
+  text-decoration: none;
+}
+
 @media (max-width: 768px) {
   .RecentSearches {
     align-items: center;
