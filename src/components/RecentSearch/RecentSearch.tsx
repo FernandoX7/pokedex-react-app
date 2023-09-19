@@ -47,7 +47,13 @@ const RecentSearch: React.FC<RecentSearchProps> = ({pokemon}) => {
             Abilities
           </h3>
 
-          <p>Torrent, Rain Dash</p>
+          {pokemon.abilities.map((item: any) => {
+            return <p key={Math.random()}
+            className={classes.Ability}>
+              {item.ability.name.charAt(0).toUpperCase() + item.ability.name.slice(1)}
+            </p>;
+          })}
+
         </div>
 
         <div className={classes.HorizontalSection}>
@@ -76,6 +82,7 @@ const RecentSearch: React.FC<RecentSearchProps> = ({pokemon}) => {
           {pokemon.types.map((item: any) => {
             return (
               <p
+                key={Math.random()}
                 className={classes.Type}
                 style={{
                   backgroundColor: PokemonTypeColor(item.type.name)

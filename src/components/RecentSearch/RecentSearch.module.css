@@ -55,6 +55,10 @@
   margin: 0;
 }
 
+.Ability {
+  margin-bottom: 0;
+}
+
 .GridContainer {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
