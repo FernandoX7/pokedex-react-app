@@ -1,14 +1,23 @@
 import classes from './RecentSearch.module.css';
 import Card from "../Card/Card";
+import React from "react";
 
-const RecentSearch = () => {
+interface RecentSearchProps {
+  id: string,
+  imageUrl: string,
+  name: string,
+}
+
+const RecentSearch: React.FC<RecentSearchProps> = ({id, imageUrl, name}) => {
   return (
-    // TODO: Add pokemon name to alt tag
     <Card className={classes.RecentSearch}>
+      <h2>{name?.toUpperCase()}</h2>
+      <p>#{id}</p>
+
       <img
         className={classes.PokemonImage}
-        src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/007.png"
-        alt="Pokemon" />
+        src={imageUrl}
+        alt={name} />
     </Card>
   );
 };
