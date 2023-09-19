@@ -17,3 +17,9 @@
   font-size: 18px;
   padding: 5px;
 }
+
+@media (max-width: 768px) {
+  .SearchBar {
+    margin: 2.5rem auto;
+  }
+}
