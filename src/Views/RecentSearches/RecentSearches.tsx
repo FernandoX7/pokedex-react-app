@@ -14,9 +14,7 @@ const RecentSearches = () => {
         return (
           <RecentSearch
             key={pokemon.id}
-            imageUrl={pokemon.sprites.front_default}
-            name={pokemon.species.name}
-            id={pokemon.id}
+            pokemon={pokemon}
           />
         );
       })}

@@ -1,23 +1,83 @@
 .RecentSearch {
   cursor: pointer;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 250px;
-  width: 250px;
-  overflow: hidden;
   transition: background-color 0.5s ease;
+  width: fit-content;
+  margin: 15px auto;
+  border-bottom: 1px solid #E7E7E7;
 }
 
 .RecentSearch:hover {
-  background-color: #d74a4a;
+  background-color: #cc5a5a;
 }
 
-.PokemonImage {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
+.LeftContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 350px;
+  align-items: center;
+}
+
+.Name {
+  color: #31319A;
+  margin: 0 0;
+  padding: 0;
+  text-align: center;
+}
+
+.Id {
+  color: #130065;
+  margin: 5px 0 0 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.RightContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.HorizontalSection {
+  display: flex;
+  flex-direction: column;
+  /*justify-content: center;*/
+  /*align-items: center;*/
+  padding: 0 50px;
+  min-width: 100px;
+}
+
+.SectionTitle {
+  color: #eeeeee;
+  padding: 0;
+  margin: 0;
+}
+
+.GridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-gap: 10px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-top: 15px;
+}
+
+
+.GridContainer img {
+  max-width: 30%;
+  height: auto;
+}
+
+.Type {
+  border-radius: 20px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 20px 0;
 }
 
 @media (max-width: 768px) {

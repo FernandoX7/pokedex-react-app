@@ -1,8 +1,6 @@
 .RecentSearches {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-top: 5rem;
+  flex-direction: column;
 }
 
 @media (max-width: 768px) {

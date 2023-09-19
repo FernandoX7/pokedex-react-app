@@ -1,8 +1,10 @@
 import { PokemonSprites } from "./PokemonSprites";
 import { PokemonSpecies } from "./PokemonSpecies";
+import { PokemonTypes } from "./PokemonTypes";
 
 export interface Pokemon {
   id: string,
-  sprites: PokemonSprites,
   species: PokemonSpecies,
+  sprites: PokemonSprites,
+  types: PokemonTypes[],
 }
