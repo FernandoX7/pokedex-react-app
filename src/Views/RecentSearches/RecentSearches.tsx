@@ -1,13 +1,14 @@
 import classes from './RecentSearches.module.css';
+import RecentSearch from "../../components/RecentSearch/RecentSearch";
 
 const RecentSearches = () => {
   return (
     <div className={classes.RecentSearches}>
-      <div>Test</div>
-      <div>Test</div>
-      <div>Test</div>
-      <div>Test</div>
-      <div>Test</div>
+      <RecentSearch />
+      <RecentSearch />
+      <RecentSearch />
+      <RecentSearch />
+      <RecentSearch />
     </div>
   );
 };
