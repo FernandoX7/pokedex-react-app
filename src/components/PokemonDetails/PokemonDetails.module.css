@@ -1,0 +1,64 @@
+.MainDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 20px 20%;
+  padding: 20px;
+}
+
+.Sprites {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+}
+
+.Sprite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-1px);
+  }
+  50% {
+    transform: translateX(1px);
+  }
+  75% {
+    transform: translateX(-1px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.Sprite:hover {
+  animation: shake 1s ease infinite;
+}
+
+.PokemonType {
+  border-radius: 20px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  height: 50px;
+  display: inline-block;
+  padding: 0 25px;
+  line-height: 50px;
+}
+
+.MainSprite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  width: 300px;
+  overflow: hidden;
+}
