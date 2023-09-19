@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorView from "./Views/ErrorView/ErrorView";
+import PokemonDetailsView from "./Views/PokemonDetailsView/PokemonDetailsView";
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
     path: "/",
     element: <App />,
     errorElement: <ErrorView />
+  },
+  {
+    path: "pokemon/:pokemonId",
+    element: <PokemonDetailsView />,
   },
 ]);
 
