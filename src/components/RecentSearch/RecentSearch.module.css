@@ -18,3 +18,9 @@
   max-width: 100%;
   object-fit: contain;
 }
+
+@media (max-width: 768px) {
+  .RecentSearch {
+    margin-bottom: 10px;
+  }
+}
